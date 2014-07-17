@@ -1,5 +1,12 @@
 language: python
 python:
   - 2.7
+env:
+  global:
+    - secure: TWwConXOm67HA8r+PsmO8XYyicdWShKQI7KNNhBY5NXFWnpeH4GZ5iJXT3Y4WcwpWy0eW2VAfcvaUbEeiC0YI415QWkxKZrXudza4UZ1RAh5nwgxKs76lDCQd+csZNcQVs183+L5Fna453ukbLKq0oXj85JMIg/yWO0HtIqoZeKnrf7OwTxgxDIS4dowAjhY5T9imNfUkZc5Ss/Vjlyy7BJCvGffJhscZhDv/6MgABUDOyrkoeIUy52apMZKYfrptpLXSH8K6qusDnJIAFMjiz/RcnnGA+bjx3PhWRyfaPryd4Gzmx39n7BpamwTi4soXbvsD7A6Qdn43ZaeYqKrLA==
+    - secure: u/XNeqNkJP3Fo2wKKoE1koZQxL5nkF9xe2DV8W11Fmz/W2SMz9DVhwR2UFAGxuSOCcKWpgjd5H/YYEFetZVnKsuIjZDEBQZ7EdylfOX5GzNQkzcK88fgfcXL8dVT7CwWUz74ExU895PN96CJ+UIUPF4zwl12kDD2KyotOne7cfTEXaGBz92j9GyQ/HPJIGivHQY+EuTVhzEtUFyyKP/HM29C0tMlLKCRfSrg3ngkh4Y1Gh6d3LZHlLdeQAqfEUZ8t02y+8+lO0EV8OaJFfwzL0VmEbpOuVgHxFaxC3VZZjFONZMda3xoJqfjwuPqweswXj+Cy5Bv1b0uvrzDBy77ew==
 install:
   - pip install aws-cli
+script:
+  - aws s3 cp s3://s3-download-demo/config.json
+  - cat config.json
