@@ -8,5 +8,5 @@ env:
 install:
   - pip install awscli
 script:
-  - aws s3 cp s3://s3-download-demo/config.json
+  - aws s3 cp s3://s3-download-demo/config.json config.json
   - cat config.json
